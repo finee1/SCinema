@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <ImageView
+        android:id="@+id/actor_photo"
+        android:layout_width="49dp"
+        android:layout_height="68dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@drawable/test_image"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/actor_name"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingEnd="5dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/actor_photo"
+        app:layout_constraintStart_toEndOf="@id/actor_photo"
+        app:layout_constraintTop_toTopOf="@+id/actor_photo"
+        app:layout_constraintVertical_bias="0.326"
+        tools:text="Владимир Онохов" />
+
+    <TextView
+        android:id="@+id/actor_role"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="12sp"
+        android:gravity="start"
+        app:layout_constraintStart_toStartOf="@+id/actor_name"
+        app:layout_constraintTop_toBottomOf="@+id/actor_name"
+        tools:text="Лешка" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

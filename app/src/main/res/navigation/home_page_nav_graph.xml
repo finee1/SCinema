@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home_btn">
+
+    <fragment
+        android:id="@+id/navigation_home_btn"
+        android:name="com.example.skillcinema.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_btn_to_fullListFilmsFragment"
+            app:destination="@id/fullListFilmsFragment"
+            app:popUpTo="@id/navigation_home_btn"
+            app:enterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            />
+        <argument
+            android:name="param1"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_navigation_home_btn_to_filmFragment"
+            app:destination="@id/filmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard_btn"
+        android:name="com.example.skillcinema.ui.search.SearchFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_dashboard_btn_to_filmFragment"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_btn_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications_btn"
+        android:name="com.example.skillcinema.ui.profile.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_notifications_btn_to_filmFragment"
+            app:destination="@id/filmFragment" />
+        <action
+            android:id="@+id/action_navigation_notifications_btn_to_fullListBDFragment"
+            app:destination="@id/fullListBDFragment" />
+        <action
+            android:id="@+id/action_navigation_notifications_btn_to_filmFragment2"
+            app:destination="@id/filmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullListFilmsFragment"
+        android:name="com.example.skillcinema.ui.home.FullListFilmsFragment"
+        android:label="fragment_full_list_films"
+        tools:layout="@layout/fragment_full_list_films" >
+
+        <action
+            android:id="@+id/action_fullListFilmsFragment_to_filmFragment"
+            app:destination="@id/filmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmFragment"
+        android:name="com.example.skillcinema.ui.home.FilmFragment"
+        android:label="fragment_film"
+        tools:layout="@layout/fragment_film" >
+        <action
+            android:id="@+id/action_filmFragment_to_staffFragment"
+            app:destination="@id/staffFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+        <action
+            android:id="@+id/action_filmFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffFragment"
+        android:name="com.example.skillcinema.ui.home.StaffFragment"
+        android:label="StaffFragment"
+        tools:layout="@layout/fragment_staff">
+        <action
+            android:id="@+id/action_staffFragment_to_filmographyFragment"
+            app:destination="@id/filmographyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.skillcinema.ui.home.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/filmographyFragment"
+        android:name="com.example.skillcinema.ui.home.FilmographyFragment"
+        android:label="fragment_filmography"
+        tools:layout="@layout/fragment_filmography" />
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.example.skillcinema.ui.home.SeriesFragment"
+        android:label="fragment_series"
+        tools:layout="@layout/fragment_series" />
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.skillcinema.ui.search.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_filterFragment_to_countryFilterFragment"
+            app:destination="@id/countryFilterFragment" />
+        <action
+            android:id="@+id/action_filterFragment_to_genreFilterFragment"
+            app:destination="@id/genreFilterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryFilterFragment"
+        android:name="com.example.skillcinema.ui.search.CountryFilterFragment"
+        android:label="fragment_country_filter"
+        tools:layout="@layout/fragment_country_filter" />
+    <fragment
+        android:id="@+id/genreFilterFragment"
+        android:name="com.example.skillcinema.ui.search.GenreFilterFragment"
+        android:label="GenreFilterFragment"
+        tools:layout="@layout/fragment_genre_filter"/>
+    <fragment
+        android:id="@+id/fullListBDFragment"
+        android:name="com.example.skillcinema.ui.profile.FullListBDFragment"
+        android:label="FullListBDFragment"
+        tools:layout="@layout/fragment_full_list_b_d">
+        <action
+            android:id="@+id/action_fullListBDFragment_to_filmFragment"
+            app:destination="@id/filmFragment" />
+    </fragment>
+</navigation>

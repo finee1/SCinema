@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="26dp"
+    tools:context=".ui.profile.NotificationsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/nameWatched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/watched"
+            android:textColor="#272727"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/showAllWatched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:paddingStart="16dp"
+            android:textColor="#3D3BFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/nameWatched"
+            app:layout_constraintEnd_toStartOf="@id/watchedCaret"
+            app:layout_constraintTop_toTopOf="@id/nameWatched"
+            tools:text="21" />
+
+        <ImageView
+            android:id="@+id/watchedCaret"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/showAllWatched"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/showAllWatched"
+            app:srcCompat="@drawable/ic_caret_right" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/watchedRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameWatched"
+            tools:listitem="@layout/film_preview" />
+
+        <TextView
+            android:id="@+id/collectionsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/collections"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/watchedRV" />
+
+        <LinearLayout
+            android:id="@+id/create_collection"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="26dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/collectionsText">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start|center"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_plus" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="@string/create_collection"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLike"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_collection"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.400"
+                    app:srcCompat="@drawable/ic_heart_black" />
+
+                <TextView
+                    android:id="@+id/nameCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Любимое"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/icCard"
+                    app:layout_constraintStart_toStartOf="@+id/icCard"
+                    app:layout_constraintTop_toBottomOf="@+id/icCard" />
+
+                <TextView
+                    android:id="@+id/countCardLike"
+                    android:layout_width="17dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    tools:text="9"
+                    android:textColor="@color/white"
+                    android:textSize="7sp"
+                    app:layout_constraintEnd_toEndOf="@id/nameCard"
+                    app:layout_constraintStart_toStartOf="@id/nameCard"
+                    app:layout_constraintTop_toBottomOf="@id/nameCard"
+                    tools:ignore="SmallSp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWantSee"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toEndOf="@id/cardLike"
+            app:layout_constraintTop_toBottomOf="@id/create_collection"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icCardWantSee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.400"
+                    app:srcCompat="@drawable/ic_bookmark_black" />
+
+                <TextView
+                    android:id="@+id/nameCardWantSee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Хочу посмотреть"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/icCardWantSee"
+                    app:layout_constraintStart_toStartOf="@id/icCardWantSee"
+                    app:layout_constraintTop_toBottomOf="@id/icCardWantSee" />
+
+                <TextView
+                    android:id="@+id/countCardWantSee"
+                    android:layout_width="17dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/shape_radius"
+                    android:gravity="center"
+                    tools:text="9"
+                    android:textColor="@color/white"
+                    android:textSize="7sp"
+                    app:layout_constraintEnd_toEndOf="@id/nameCardWantSee"
+                    app:layout_constraintStart_toStartOf="@id/nameCardWantSee"
+                    app:layout_constraintTop_toBottomOf="@id/nameCardWantSee"
+                    tools:ignore="SmallSp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/collectionsRV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardLike"
+            tools:listitem="@layout/collection_layout" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/nameInterested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Вам было интересно"
+            android:textColor="#272727"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/collectionsRV" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/showAllInterested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:paddingStart="16dp"
+            android:textColor="#3D3BFF"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/nameInterested"
+            app:layout_constraintEnd_toStartOf="@id/interestedCaret"
+            app:layout_constraintTop_toTopOf="@id/nameInterested"
+            tools:text="100" />
+
+        <ImageView
+            android:id="@+id/interestedCaret"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/showAllInterested"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/showAllInterested"
+            app:srcCompat="@drawable/ic_caret_right" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/interestedRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameInterested"
+            tools:listitem="@layout/film_preview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

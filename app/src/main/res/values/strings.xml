@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">SkillCinema</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="all">Все</string>
+    <string name="open_all">К списку</string>
+    <string name="Filmography">Фильмография</string>
+    <string name="best">Лучшее</string>
+    <string name="gallery">Галерея</string>
+    <string name="Frames">Кадры</string>
+    <string name="from_filming">Со съёмок</string>
+    <string name="filmography">Фильмография</string>
+    <string name="actor">Актер</string>
+    <string name="dubbing_actor">Актер дубляжа</string>
+    <string name="actor_playing_himself">Актер: играет самого себя</string>
+    <string name="season">Сезон</string>
+    <string name="search">Поиск</string>
+    <string name="search_settings">Настройки поиска</string>
+    <string name="country">Страна</string>
+    <string name="enter_country">Введите страну</string>
+    <string name="genre">Жанр</string>
+    <string name="enter_genre">Введите жанр</string>
+    <string name="watched">Просмотрено</string>
+    <string name="collections">Коллекции</string>
+    <string name="create_collection">Создать свою коллекцию</string>
+    <string name="hint_edit_text_dialog">Придумайте название для вашей новой коллекции</string>
+    <string name="done">Готово</string>
+    <string name="add_in_collection">Добавить в коллекцию</string>
+    <string name="want_see">Хочу посмотреть</string>
+    <string name="my_favorite">Любимое</string>
+    <string name="clear_history">Очистить историю</string>
+    <string name="similar_films">Похожие фильмы</string>
+    <string name="starred_actors">В фильме снимались</string>
+    <string name="worked_on_movies">Над фильмом работали</string>
+</resources>

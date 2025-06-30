@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        tools:context=".ui.home.StaffFragment">
+
+        <ImageButton
+            android:id="@+id/btnBackStaff"
+            android:layout_width="36dp"
+            android:layout_height="56dp"
+            android:background="@color/transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_btn" />
+
+        <ImageView
+            android:id="@+id/imageStaffPhoto"
+            android:layout_width="146dp"
+            android:layout_height="201dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBackStaff"
+            tools:srcCompat="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/nameStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageStaffPhoto"
+            app:layout_constraintTop_toTopOf="@id/imageStaffPhoto"
+            tools:text="Кристина Асмус" />
+
+        <TextView
+            android:id="@+id/roleStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/nameStaff"
+            app:layout_constraintTop_toBottomOf="@id/nameStaff"
+            tools:text="Актриса" />
+
+        <TextView
+            android:id="@+id/textStaffSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageStaffPhoto"
+            android:text="@string/best" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBestFilmsStaff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textStaffSelection"
+            tools:listitem="@layout/staff_film" />
+
+        <TextView
+            android:id="@+id/filmography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/Filmography"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewBestFilmsStaff" />
+
+        <ImageView
+            android:id="@+id/imageRightArrowStaff"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="26dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@id/filmography"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/filmography"
+            app:srcCompat="@drawable/ic_caret_right" />
+
+        <TextView
+            android:id="@+id/to_all_filmography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/open_all"
+            android:textColor="@color/app_color"
+            app:layout_constraintBottom_toBottomOf="@id/filmography"
+            app:layout_constraintEnd_toStartOf="@id/imageRightArrowStaff"
+            app:layout_constraintTop_toTopOf="@id/filmography" />
+
+        <TextView
+            android:id="@+id/textFilmsStaffCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filmography"
+            tools:text="44 фильма"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
